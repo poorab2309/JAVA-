@@ -1,0 +1,94 @@
+Q1) BasicOperation.java
+/* import java.util.Scanner;
+
+public class BasicOperations {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        System.out.println("Addition = " + (a + b));
+        System.out.println("Subtraction = " + (a - b));
+        System.out.println("Multiplication = " + (a * b));
+        System.out.println("Division = " + ((float) a / b)); // float for decimal answer
+    }
+} 
+
+Q2) MinutesToYMD.java
+import java.util.Scanner;
+
+public class MinutesToYMD {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter total minutes: ");
+        long minutes = sc.nextLong();
+
+        long days = minutes / (60 * 24); // total days
+        long years = days / 365;
+        days = days % 365;
+        long months = days / 30;
+        days = days % 30;
+
+        System.out.println("Years: " + years);
+        System.out.println("Months: " + months);
+        System.out.println("Days: " + days);
+    }
+}
+
+Q3) FahrenheitToCelsius.java
+import java.util.Scanner;
+
+public class FahrenheitToCelsius {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter temperature in Fahrenheit: ");
+        double f = sc.nextDouble();
+
+        double c = (f - 32) * 5 / 9;
+        System.out.println("Temperature in Celsius = " + c);
+    }
+}
+
+Q4) SumOfThreeDigit.java
+import java.util.Scanner;
+
+public class SumOfThreeDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a 3-digit number: ");
+        int num = sc.nextInt();
+
+        int d1 = num / 100; // first digit
+        int d2 = (num / 10) % 10; // middle digit
+        int d3 = num % 10; // last digit
+
+        int sum = d1 + d2 + d3;
+        System.out.println("Sum of digits = " + sum);
+    }
+}
+
+Q5) ReverseThreeDigit.JAVA
+import java.util.Scanner;
+
+public class ReverseThreeDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a 3-digit number: ");
+        int num = sc.nextInt();
+
+        int d1 = num / 100; // first digit
+        int d2 = (num / 10) % 10; // middle digit
+        int d3 = num % 10; // last digit
+
+        int reverse = (d3 * 100) + (d2 * 10) + d1;
+        System.out.println("Reversed number = " + reverse);
+    }
+}
