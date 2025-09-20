@@ -1,0 +1,203 @@
+/* 
+Q1) MaxMinArray.java
+import java.util.Scanner;
+
+public class MaxMinArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int max = arr[0];
+        int min = arr[0];
+
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > max) max = arr[i];
+            if (arr[i] < min) min = arr[i];
+        }
+
+        System.out.println("Maximum element = " + max);
+        System.out.println("Minimum element = " + min);
+
+        // Extra lines for name and roll number
+        System.out.println("POORAB JAIN");
+        System.out.println("24CSU151");
+
+        sc.close();
+    }
+}
+
+Q2) SearchIndex.java
+import java.util.Scanner;
+
+public class SearchIndex {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter size: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("Enter element to search: ");
+        int search = sc.nextInt();
+
+        boolean found = false;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == search) {
+                System.out.println(search + " is found in your array at index: " + i);
+                found = true;
+                break; // first match milte hi loop stop
+            }
+        }
+
+        if (!found) {
+            System.out.println(search + " is not found in the array.");
+        }
+
+        // Extra print for Name & Roll No
+        System.out.println("poorab jain");
+        System.out.println("24CSU151");
+
+        sc.close();
+    }
+}
+
+Q3) CountOddEven.java
+public class CountOddEven {
+    public static void main(String[] args) {
+        int[] numbers = {10, 21, 32, 43, 54, 65, 76}; // sample array
+
+        int oddCount = 0;
+        int evenCount = 0;
+
+        for (int num : numbers) {
+            if (num % 2 == 0) {
+                evenCount++; // even number
+            } else {
+                oddCount++;  // odd number
+            }
+        }
+
+        System.out.println("Total Even Numbers: " + evenCount);
+        System.out.println("Total Odd Numbers: " + oddCount);
+
+        // Name and Roll Number print karna
+        System.out.println("Poorab Jain");
+        System.out.println("24CSU151");
+    }
+}
+
+Q4) SumArray.java
+import java.util.Scanner;
+
+public class SumArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int sumAll = 0, sumAlt = 0;
+
+        for (int i = 0; i < n; i++) {
+            sumAll += arr[i]; // all elements sum
+            if (i % 2 == 0) { // alternate elements sum (index 0,2,4...)
+                sumAlt += arr[i];
+            }
+        }
+
+        System.out.println("Sum of all elements = " + sumAll);
+        System.out.println("Sum of alternate elements = " + sumAlt);
+
+        // Extra lines for Name & Roll No
+        System.out.println("poorab jain");
+        System.out.println("24CSU151");
+
+        sc.close();
+    }
+}
+
+Q5) ReverseArray.java
+import java.util.Scanner;
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.print("Reversed array: ");
+        for (int i = n - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+
+        // Extra lines for name and roll number
+        System.out.println();
+        System.out.println("POORAB JAIN");
+        System.out.println("24CSU151");
+
+        sc.close();
+    }
+}
+
+Q6) RemoveDuplicates.java
+import java.util.Scanner;
+import java.util.LinkedHashSet;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        LinkedHashSet<Integer> set = new LinkedHashSet<>();
+        for (int i = 0; i < n; i++) {
+            set.add(arr[i]); // removes duplicates automatically
+        }
+
+        System.out.print("Array without duplicates: ");
+        for (int num : set) {
+            System.out.print(num + " ");
+        }
+
+        // Name & Roll No
+        System.out.println();
+        System.out.println("POORAB JAIN");
+        System.out.println("24CSU151");
+
+        sc.close();
+    }
+}
+*/
