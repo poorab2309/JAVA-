@@ -1,0 +1,130 @@
+Q1) Main1.java
+/* //Poorab Jain  & 24csu151 */
+class Employee {
+    String name;
+    int id;
+
+    Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + id);
+    }
+}
+
+class Manager extends Employee {
+    String department;
+
+    Manager(String name, int id, String department) {
+        super(name, id);
+        this.department = department;
+    }
+
+    @Override
+    void displayDetails() {
+        super.displayDetails();
+        System.out.println("Department: " + department);
+    }
+}
+
+public class Main1 {
+    public static void main(String[] args) {
+        Manager m = new Manager("Shriyanshu", 194, "CSE");
+        m.displayDetails();
+    }
+}
+
+Q2) Vehicle.java
+/* //Poorab Jain  & 24csu151 */
+class Vehicle {
+    String brand;
+
+    Vehicle(String brand) {
+        this.brand = brand;
+    }
+}
+
+class Car extends Vehicle {
+    String model;
+
+    Car(String brand, String model) {
+        super(brand); // calling parent constructor
+        this.model = model;
+    }
+
+    void showDetails() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+    }
+}
+
+public class Main2 {
+    public static void main(String[] args) {
+        Car c = new Car("Toyota", "Fortuner");
+        c.showDetails();
+    }
+} 
+
+Q3) Grandfather.java
+/* //Poorab Jain & 24csu151 */
+class Grandfather {
+    void show() {
+        System.out.println("I am Grandfather");
+    }
+}
+
+class Father extends Grandfather {
+    void display() {
+        System.out.println("I am Father");
+    }
+}
+
+class Son extends Father {
+    void print() {
+        System.out.println("I am Son");
+    }
+}
+
+public class Main3 {
+    public static void main(String[] args) {
+        Son s = new Son();
+        s.show();     // from Grandfather
+        s.display();  // from Father
+        s.print();    // from Son
+    }
+}
+
+Q4) Shape.java
+/* //Poorab Jain & 24csu151 */
+class Shape {
+    void draw() {
+        System.out.println("Drawing shape");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing circle");
+    }
+}
+
+class Square extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing square");
+    }
+}
+
+public class Main4 {
+    public static void main(String[] args) {
+        Shape c = new Circle();
+        Shape s = new Square();
+
+        c.draw();
+        s.draw();
+    }
+}
