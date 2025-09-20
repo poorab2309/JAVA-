@@ -1,0 +1,131 @@
+Q1) Main.java
+interface Vehicle {
+    void start();
+}
+
+class Car implements Vehicle {
+    public void start() {
+        System.out.println("Car starts with a key.");
+    }
+}
+
+class Bike implements Vehicle {
+    public void start() {
+        System.out.println("Bike starts with a self-start.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v1 = new Car();
+        Vehicle v2 = new Bike();
+        v1.start();
+        v2.start();
+    }
+}
+
+Q2) Main2.java
+interface Shape {
+    double area();
+}
+
+class Circle implements Shape {
+    double radius;
+    Circle(double r) { radius = r; }
+    public double area() { return Math.PI * radius * radius; }
+}
+
+class Rectangle implements Shape {
+    double l, b;
+    Rectangle(double l, double b) { this.l = l; this.b = b; }
+    public double area() { return l * b; }
+}
+
+public class Main2 {
+    public static void main(String[] args) {
+        Shape s1 = new Circle(5);
+        Shape s2 = new Rectangle(4, 6);
+        System.out.println("Circle area: " + s1.area());
+        System.out.println("Rectangle area: " + s2.area());
+    }
+}
+
+Q3) Main3.java
+interface Bank {
+    double rateOfInterest();
+}
+
+class SBI implements Bank {
+    public double rateOfInterest() { return 6.5; }
+}
+
+class ICICI implements Bank {
+    public double rateOfInterest() { return 7.0; }
+}
+
+public class Main3 {
+    public static void main(String[] args) {
+        Bank b1 = new SBI();
+        Bank b2 = new ICICI();
+        System.out.println("SBI ROI: " + b1.rateOfInterest());
+        System.out.println("ICICI ROI: " + b2.rateOfInterest());
+    }
+}
+
+Q4) Main4.java
+interface Payment {
+    void pay(double amount);
+}
+
+class CreditCardPayment implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card.");
+    }
+}
+
+class UPIPayment implements Payment {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using UPI.");
+    }
+}
+
+public class Main4 {
+    public static void main(String[] args) {
+        Payment p1 = new CreditCardPayment();
+        Payment p2 = new UPIPayment();
+        p1.pay(1200);
+        p2.pay(500);
+    }
+}
+
+Q5) Main5.java
+interface Observer {
+    void update(String msg);
+}
+
+class User implements Observer {
+    String name;
+    User(String name) { this.name = name; }
+    public void update(String msg) {
+        System.out.println(name + " received: " + msg);
+    }
+}
+
+class Publisher {
+    Observer[] observers;
+    Publisher(Observer[] obs) { this.observers = obs; }
+    void sendMessage(String msg) {
+        for (Observer o : observers) {
+            o.update(msg);
+        }
+    }
+}
+
+public class Main5 {
+    public static void main(String[] args) {
+        Observer u1 = new User("User1");
+        Observer u2 = new User("User2");
+        Publisher pub = new Publisher(new Observer[]{u1, u2});
+        pub.sendMessage("Hello Subscribers!");
+    }
+}
