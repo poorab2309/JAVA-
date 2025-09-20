@@ -1,0 +1,182 @@
+/* 
+Q1) Rhombus.java
+import java.util.Scanner;
+
+public class CharacterRhombus {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Print your name and roll number
+        System.out.println("Name: Poorab Jain");
+        System.out.println("Roll No: 24CSU151");
+
+        while (true) {
+            // DoD1: Ask user for number of rows
+            System.out.print("Enter the number of rows for the rhombus: ");
+            int n = sc.nextInt();
+
+            System.out.print("Enter a character to draw the rhombus: ");
+            char ch = sc.next().charAt(0);
+
+            // Upper half of rhombus
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= n - i; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = 1; j <= 2 * i - 1; j++) {
+                    System.out.print(ch);
+                }
+                System.out.println();
+            }
+
+            // Lower half of rhombus
+            for (int i = n - 1; i >= 1; i--) {
+                for (int j = 1; j <= n - i; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = 1; j <= 2 * i - 1; j++) {
+                    System.out.print(ch);
+                }
+                System.out.println();
+            }
+
+            // DoD2: Ask user if they want to continue
+            System.out.print("Do you want to try another value? (Y/N): ");
+            char choice = sc.next().toUpperCase().charAt(0);
+            if (choice == 'N') {
+                System.out.println("Exiting... Thank you!");
+                break;
+            }
+        }
+        sc.close();
+    }
+}
+
+Q2) quadraticequation.java
+import java.util.Scanner;
+
+public class quadraticequation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a: ");
+        double a = sc.nextDouble();
+        System.out.print("Enter b: ");
+        double b = sc.nextDouble();
+        System.out.print("Enter c: ");
+        double c = sc.nextDouble();
+
+        double d = b * b - 4 * a * c; // Discriminant
+
+        if (d > 0) { // 2 real roots
+            double r1 = (-b + Math.sqrt(d)) / (2 * a);
+            double r2 = (-b - Math.sqrt(d)) / (2 * a);
+            System.out.println("Roots are: " + r1 + " and " + r2);
+        } 
+        else if (d == 0) { // 1 real root
+            double r = -b / (2 * a);
+            System.out.println("Both roots are same: " + r);
+        } 
+        else { // Complex roots
+            System.out.println("Roots are not real");
+        }
+
+        // Extra print for name and roll number
+        System.out.println("POORAB JAIN");
+        System.out.println("24csu151");
+
+        sc.close(); // Scanner ko close karna best practice hai
+    }
+}
+
+Q3) vowels.java
+import java.util.Scanner;
+
+public class vowels {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter an alphabet: ");
+        char ch = sc.next().toLowerCase().charAt(0);  //
+
+        if (ch >= 'a' && ch <= 'z') {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                System.out.println(ch + " is a vowel.");
+            } else {
+                System.out.println(ch + " is a consonant."); 
+            }
+        } else {
+            System.out.println("Invalid input. Please enter an alphabet.");
+        }
+
+        sc.close();
+    }
+}
+
+Q4) PrimeCheck.java
+import java.util.Scanner;
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        boolean prime = true;
+
+        if (num <= 1) {
+            prime = false;
+        } else {
+            for (int i = 2; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+        }
+
+        if (prime) {
+            System.out.println(num + " is Prime");
+        } else {
+            System.out.println(num + " is Not Prime");
+        }
+
+        // Extra print for name and roll number
+        System.out.println("POORAB JAIN");
+        System.out.println("24CSU151");
+
+        sc.close(); // Scanner close karna best practice hai
+    }
+}
+
+Q5) Fibonacci.java
+import java.util.Scanner;
+
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter terms: ");
+        int n = sc.nextInt();
+
+        int a = 0, b = 1;
+
+        System.out.print(a + " " + b);
+
+        for (int i = 3; i <= n; i++) {
+            int c = a + b;
+            System.out.print(" " + c);
+            a = b;
+            b = c;
+        }
+
+        // Naam aur roll number print karna
+        System.out.println();
+        System.out.println("POORAB JAIN");
+        System.out.println("24CSU151");
+
+        sc.close();
+    }
+}
+*/
