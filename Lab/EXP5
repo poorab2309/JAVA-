@@ -1,0 +1,187 @@
+
+/* 
+Q1) Square.java
+class Shape {
+    void printShape() {
+        System.out.println("This is shape");
+    }
+}
+
+class Rectangle extends Shape {
+    void printRectangle() {
+        System.out.println("This is rectangular shape");
+    }
+}
+
+class Circle extends Shape {
+    void printCircle() {
+        System.out.println("This is circular shape");
+    }
+}
+
+class Square extends Rectangle {
+    void printSquare() {
+        System.out.println("Square is a rectangle");
+    }
+
+    public static void main(String[] args) {
+                System.out.println("Poorab Jain - Roll No: 24csu151\n");
+
+        Square sq = new Square();
+
+        // Square ka method
+        sq.printSquare();
+
+        // Rectangle (parent) ka method
+        sq.printRectangle();
+
+        // Shape (super parent) ka method
+        sq.printShape();
+    }
+}
+
+Q2) Vehicle.java, Car.java, Bike.java, Main.java
+    
+class Vehicle {
+    void display() {
+        System.out.println("This is a Vehicle");
+    }
+}
+   public class Car extends Vehicle {
+    @Override
+    void display() {
+        System.out.println("This is a Car");
+    }
+}
+  public class Bike extends Vehicle {
+    @Override
+    void display() {
+        System.out.println("This is a Bike");
+    }
+}
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Name: Poorab Jain ,24csu151");
+        System.out.print("Enter number of tyres: ");
+        int N = sc.nextInt();
+
+        Vehicle v;
+
+        switch (N) {
+            case 2:
+                v = new Bike();
+                break;
+            case 4:
+                v = new Car();
+                break;
+            default:
+                v = new Vehicle();
+                break;
+        }
+
+        v.display();  // Calls the appropriate display() method
+        sc.close();
+    }
+}
+
+
+Q3) BoxDemo.java
+class Box {
+    float width, height, depth;
+
+    // No-arg constructor
+    Box() {
+        width = height = depth = 0;
+    }
+
+    // Parameterized constructor
+    Box(float w, float h, float d) {
+        width = w;
+        height = h;
+        depth = d;
+    }
+
+    // Copy constructor
+    Box(Box b) {
+        this.width = b.width;
+        this.height = b.height;
+        this.depth = b.depth;
+    }
+
+    // Getters and Setters
+    public float getWidth() { return width; }
+    public void setWidth(float w) { this.width = w; }
+
+    public float getHeight() { return height; }
+    public void setHeight(float h) { this.height = h; }
+
+    public float getDepth() { return depth; }
+    public void setDepth(float d) { this.depth = d; }
+
+    // Method to calculate volume
+    public float volume() {
+        return width * height * depth;
+    }
+
+    public void displayVolume() {
+        System.out.println("Volume of Box: " + volume());
+    }
+}
+
+class BoxWeight extends Box {
+    float weight;
+
+    // No-arg constructor
+    BoxWeight() {
+        super();   // calls Box()
+        weight = 0;
+    }
+
+    // Parameterized constructor
+    BoxWeight(float w, float h, float d, float we) {
+        super(w, h, d);   // calls Box(w,h,d)
+        weight = we;
+    }
+
+    // Copy constructor
+    BoxWeight(BoxWeight bw) {
+        super(bw);   // calls Box(Box)
+        this.weight = bw.weight;
+    }
+
+    // Getter and Setter for weight
+    public float getWeight() { return weight; }
+    public void setWeight(float we) { this.weight = we; }
+
+    public void display() {
+        displayVolume();
+        System.out.println("Weight of Box: " + weight);
+    }
+}
+
+public class BoxWeightDemo {
+    public static void main(String[] args) {
+        System.out.println("Poorab Jain - Roll No: 24csu151\n");
+
+        // Using parameterized constructor
+        BoxWeight bw1 = new BoxWeight(2, 3, 4, 5);
+        System.out.println("Box 1:");
+        bw1.display();
+
+        // Using copy constructor
+        BoxWeight bw2 = new BoxWeight(bw1);
+        System.out.println("\nBox 2 (Copied from Box 1):");
+        bw2.display();
+
+        // Using setters
+        bw2.setWidth(5);
+        bw2.setHeight(6);
+        bw2.setDepth(7);
+        bw2.setWeight(10);
+        System.out.println("\nBox 2 (After modification):");
+        bw2.display();
+    }
+}
