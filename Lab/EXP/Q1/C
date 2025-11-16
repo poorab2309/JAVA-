@@ -1,0 +1,40 @@
+interface A {
+    void methodA();
+}
+
+interface B {
+    void methodB();
+}
+
+// Interface extending multiple interfaces
+interface C extends A, B {
+    void methodC();
+}
+
+class Impl implements C {
+
+    
+    public void methodA() {
+        System.out.println("Method A implementation");
+    }
+
+    
+    public void methodB() {
+        System.out.println("Method B implementation");
+    }
+
+    
+    public void methodC() {
+        System.out.println("Method C implementation");
+    }
+}
+
+public class TestMultipleInterfaceExtension {
+    public static void main(String[] args) {
+    System.out.println("this is poorab jain 24csu151");
+        Impl obj = new Impl();
+        obj.methodA();
+        obj.methodB();
+        obj.methodC();
+    }
+}
