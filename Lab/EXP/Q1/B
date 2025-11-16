@@ -1,0 +1,29 @@
+interface Animal {
+    void sound();
+}
+
+interface Pet extends Animal {
+    void play();
+}
+
+class Cat implements Pet {
+
+    
+    public void sound() {
+        System.out.println("Cat says Meow");
+    }
+
+    
+    public void play() {
+        System.out.println("Cat plays with ball");
+    }
+}
+
+public class TestInterfaceExtension {
+    public static void main(String[] args) {
+    System.out.println("this is poorab jain,24csu151");
+        Cat myCat = new Cat();
+        myCat.sound();
+        myCat.play();
+    }
+}
