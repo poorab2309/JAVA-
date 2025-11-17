@@ -1,0 +1,61 @@
+public interface GeometricObject {
+    double getPerimeter();
+    double getArea();
+}
+
+public interface Resizable {
+    void resize(int percent);
+}
+
+public class Circle implements GeometricObject {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    
+    public double getPerimeter() {
+        return 2 * 3.14 * radius;
+    }
+
+    
+    public double getArea() {
+        return 3.14 * radius * radius;
+    }
+}
+
+public class ResizableCircle extends Circle implements Resizable {
+
+    ResizableCircle(double radius) {
+        super(radius); 
+    }
+
+    
+    public void resize(int percent) {
+        radius += radius * (percent / 100.0);
+    }
+}
+public class Main {
+    public static void main(String args[]) {
+
+        double radius = 1.0;
+        System.out.println("Poorab Jain, 24csu151");
+        
+        ResizableCircle rc = new ResizableCircle(radius);
+        System.out.println("Perimeter: " + rc.getPerimeter());
+        System.out.println("Area: " + rc.getArea());
+        
+        System.out.println("Resizing Circle by 100%!!!");
+        rc.resize(100);
+        
+        System.out.println("Perimeter: " + rc.getPerimeter());
+        System.out.println("Area: " + rc.getArea());
+    }
+}
+
+
+
+
+
+
