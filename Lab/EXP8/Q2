@@ -1,0 +1,15 @@
+public class ExceptionExample {
+    public static void main(String[] args) {
+        System.out.println("Poorab Jain 24csu151");
+        try {
+            throw new Exception("This is a custom exception message!");
+        } 
+        catch (Exception e) {
+            
+            System.out.println("Caught Exception: " + e);
+        } 
+        finally {
+            System.out.println("Finally block executed — program ended properly.");
+        }
+    }
+}
