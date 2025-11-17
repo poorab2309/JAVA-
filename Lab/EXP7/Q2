@@ -1,0 +1,21 @@
+//we will import packages from previous question 
+
+import exercises.PackageDemo;  // importing the class from the package
+
+public class MainProgram {
+    public static void main(String[] args) {
+        PackageDemo obj = new PackageDemo();
+        obj.display();
+    }
+}
+// this is poorab jain 24csu151 
+
+
+
+
+
+
+
+
+
+
