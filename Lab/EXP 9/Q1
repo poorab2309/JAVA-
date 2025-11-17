@@ -1,0 +1,27 @@
+import java.io.File;
+
+public class CheckFileOrDirectory {
+    public static void main(String[] args) {
+        System.out.println("Poorab Jain 24csu151");
+
+        // Create a sample file in the same folder
+        File file = new File("sample.txt");
+
+        try {
+            if (!file.exists()) {
+                file.createNewFile(); // create if it doesn't exist
+                System.out.println("File 'sample.txt' was not found, so a new one was created.");
+            }
+
+            if (file.exists()) {
+                if (file.isFile()) {
+                    System.out.println(file.getName() + " exists and is a FILE.");
+                } else if (file.isDirectory()) {
+                    System.out.println(file.getName() + " exists and is a DIRECTORY.");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
